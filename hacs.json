@@ -1,5 +1,6 @@
 {
   "name": "Custom templates",
   "homeassistant": "2023.4.0",
-  "render_readme": true
+  "render_readme": true,
+  "content_in_root": true
 }
