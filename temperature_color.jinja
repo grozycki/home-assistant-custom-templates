@@ -17,5 +17,7 @@
 {% endmacro %}
 
 {% macro entity_temperature_hex_color(entity_id) %}
-    {{  celsius_temperature_hex_color(states(entity_id) | float) }}
+    {% if has_value(entity_id) %}
+    {{ celsius_temperature_hex_color(states(entity_id) | float) }}
+    {% endif %}
 {% endmacro %}
