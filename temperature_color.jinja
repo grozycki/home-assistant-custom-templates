@@ -11,8 +11,8 @@
     "#272727", "#242424", "#212121", "#1e1e1e", "#1b1b1b", "#181818", "#151515", "#121212", "#0f0f0f",
     "#0c0c0c", "#090909", "#060606", "#030303", "#000000"
   ] %}
-  {% set index = (((temperature + 30) * (len(gradient) - 1)) / 80) | round %}
-  {% set color = gradient[index] if index < len(gradient) else gradient[-1] %}
+  {% set index = (((temperature + 30) * (gradient|length - 1)) / 80) | round %}
+  {% set color = gradient[index] if index < gradient|length else gradient[-1] %}
   {{ color }}
 {% endmacro %}
 
