@@ -15,3 +15,7 @@
   {% set color = gradient[index] if index < len(gradient) else gradient[-1] %}
   {{ color }}
 {% endmacro %}
+
+{% macro entity_temperature_hex_color(entity_id) %}
+    {{ states(entity_id) | float | celsius_temperature_hex_color }}
+{% endmacro %}
